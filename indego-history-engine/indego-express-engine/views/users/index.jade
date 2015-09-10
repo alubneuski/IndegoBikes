@@ -1,0 +1,10 @@
+block content
+  h1= users
+  p "#{users.username}"
+    h1.
+        User List
+    ul
+    u
+        each user, i in users
+            li
+                "Username SHould be here: #{user.email}"
