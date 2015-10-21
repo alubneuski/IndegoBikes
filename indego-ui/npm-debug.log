@@ -1,0 +1,72 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\nodejs\\\\node.exe',
+1 verbose cli   'D:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'PhantomJS' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink D:\nodejs\\node.exe
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'PhantomJS', null ]
+7 verbose cache add name=undefined spec="PhantomJS" args=["PhantomJS",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'PhantomJS',
+8 verbose parsed url   path: 'PhantomJS',
+8 verbose parsed url   href: 'PhantomJS' }
+9 silly lockFile b8bed22c-PhantomJS PhantomJS
+10 verbose lock PhantomJS C:\Users\Alex\AppData\Roaming\npm-cache\b8bed22c-PhantomJS.lock
+11 silly lockFile b8bed22c-PhantomJS PhantomJS
+12 silly lockFile b8bed22c-PhantomJS PhantomJS
+13 verbose addNamed [ 'PhantomJS', '' ]
+14 verbose addNamed [ null, '*' ]
+15 silly lockFile bc06a96e-PhantomJS PhantomJS@
+16 verbose lock PhantomJS@ C:\Users\Alex\AppData\Roaming\npm-cache\bc06a96e-PhantomJS.lock
+17 silly addNameRange { name: 'PhantomJS', range: '*', hasData: false }
+18 verbose request where is /PhantomJS
+19 verbose request registry https://registry.npmjs.org/
+20 verbose request id 771c5fdd62e0cf8e
+21 verbose url raw /PhantomJS
+22 verbose url resolving [ 'https://registry.npmjs.org/', './PhantomJS' ]
+23 verbose url resolved https://registry.npmjs.org/PhantomJS
+24 verbose request where is https://registry.npmjs.org/PhantomJS
+25 info trying registry request attempt 1 at 22:44:35
+26 http GET https://registry.npmjs.org/PhantomJS
+27 http 404 https://registry.npmjs.org/PhantomJS
+28 silly registry.get cb [ 404,
+28 silly registry.get   { 'content-type': 'application/json',
+28 silly registry.get     'cache-control': 'max-age=0',
+28 silly registry.get     'content-length': '2',
+28 silly registry.get     'accept-ranges': 'bytes',
+28 silly registry.get     date: 'Wed, 23 Sep 2015 02:44:34 GMT',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     age: '0',
+28 silly registry.get     connection: 'keep-alive',
+28 silly registry.get     'x-served-by': 'cache-atl6233-ATL',
+28 silly registry.get     'x-cache': 'MISS',
+28 silly registry.get     'x-cache-hits': '0',
+28 silly registry.get     'x-timer': 'S1442976274.632345,VS0,VE31' } ]
+29 silly lockFile bc06a96e-PhantomJS PhantomJS@
+30 silly lockFile bc06a96e-PhantomJS PhantomJS@
+31 error 404 Not Found
+31 error 404
+31 error 404 'PhantomJS' is not in the npm registry.
+31 error 404 You should bug the author to publish it
+31 error 404 It was specified as a dependency of 'indegoui'
+31 error 404
+31 error 404 Note that you can also install from a
+31 error 404 tarball, folder, or http url, or git url.
+32 error System Windows_NT 6.2.9200
+33 error command "D:\\nodejs\\\\node.exe" "D:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "PhantomJS"
+34 error cwd D:\programming\GIT_REPO\indego-ui
+35 error node -v v0.10.32
+36 error npm -v 1.4.28
+37 error code E404
+38 verbose exit [ 1, true ]

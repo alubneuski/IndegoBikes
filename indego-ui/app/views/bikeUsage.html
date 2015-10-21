@@ -1,0 +1,7 @@
+<div class="container" ng-controller="BikeUsageController" style="padding: 20px;">
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="item in dataSet">
+            <a href="#/details/{{ item.properties.kioskId }}">{{ item.properties.name }}</a>
+        </li>
+    </ul>
+</div>
