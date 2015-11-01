@@ -22,7 +22,7 @@ var ctrs = angular.module('BikeControllers',[]);
           angular.forEach( data.features, function (value){
                 var myLatLng = new google.maps.LatLng(value.geometry.coordinates[1], value.geometry.coordinates[0]);
                 var mapOptions = {
-                        center: [39.9522, 75.1639],
+                        center: myLatLng,
                         zoom: 12
                     };
 
