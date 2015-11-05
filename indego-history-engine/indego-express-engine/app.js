@@ -10,18 +10,7 @@ var config = require('./config');
 // New Code
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/nodetest1');
-
-
-if (db !== NaN) {
-    console.info("Connected to database");
-}
-
-client = new Client();
-client.get("https://api.phila.gov/bike-share-stations/v1",function(data,response){
-  console.info(data);
-  console.info(response);
-})
+var db = monk(config.connection_string);
 
 var routes = require('./routes/index');
 
