@@ -9,8 +9,9 @@ router.get('/today', function(req, res) {
     console.info("TEST length " + Object.keys(test).length);
     console.info("getting info for Today at " + date);
     var collection = db.get('features');
+
     collection.find({
-        "properties.dataStamp" : {"$gte": new Date(new Date().setDate(new Date().getDate()-1))}
+        //"properties.timeStamp" : {"$gte": new Date(new Date().setDate(new Date().getDate()-1))}
     },{},function(e,docs){
         res.json('showAllDataForToday', {
             "showAlldataForToday" : docs
@@ -24,7 +25,7 @@ router.get('/todayAgregated', function(req, res) {
     console.info("getting info for Today at " + date);
     var collection = db.get('features');
     collection.find({
-        "properties.dataStamp" : {"$gte": new Date(new Date().setDate(new Date().getDate()-1))}
+        "properties.timeStamp" : {"$gte": new Date(new Date().setDate(new Date().getDate()-1))}
     },{},function(e,docs){
         res.json('showAllDataForToday', {
             "showAlldataForToday" : docs
@@ -37,7 +38,7 @@ router.get('/allLastWeekAgregated', function(req, res) {
     var db = req.db;
     var collection = db.get('features');
     collection.find({
-      "properties.dataStamp" : {"$gte": new Date(new Date().setDate(new Date().getDate()-5))}
+      "properties.timeStamp" : {"$gte": new Date(new Date().setDate(new Date().getDate()-5))}
     },{},function(e,docs){
         res.json('allLastWeekAgregated', {
             "showAllLastWeekAgregated" : docs
@@ -49,7 +50,7 @@ router.get('/getStationLastWeek/:kioskId', function(req,res) {
     var db = req.db;
     var collection = db.get('features');
     collection.find({
-      "properties.dataStamp" :  {"$gte": new Date(new Date().setDate(new Date().getDate()-5))},
+      "properties.timeStamp" :  {"$gte": new Date(new Date().setDate(new Date().getDate()-5))},
       "properties.kioskId" : parseInt(req.params.kioskId)
     },{},function(e,docs){
       res.json('showStationsDataLastWeek', {

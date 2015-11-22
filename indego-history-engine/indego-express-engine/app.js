@@ -8,7 +8,6 @@ var bodyParser = require('body-parser');
 var config = require('./config/config');
 
 // New Code
-var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk(config.connection_string);
 
