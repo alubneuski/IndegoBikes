@@ -39,8 +39,8 @@ router.get('/allLastWeekAgregated', function(req, res) {
     collection.find({
       "properties.dataStamp" : {"$gte": new Date(new Date().setDate(new Date().getDate()-5))}
     },{},function(e,docs){
-        res.json('showAllDataForToday', {
-            "showAlldataForToday" : docs
+        res.json('allLastWeekAgregated', {
+            "showAllLastWeekAgregated" : docs
         });
     });
 });
