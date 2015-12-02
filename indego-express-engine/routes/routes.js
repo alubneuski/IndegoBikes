@@ -25,7 +25,10 @@ var findCollectionWithId = function (req, res, startingDate, kioskId) {
      "properties.kioskId" : kioskId
   },{},function(e,docs){
       console.error(e);
+      var aggrCtrl = new aggCtrl(docs);
+      console.info(aggrCtrl.getMetaData(docs));
       res.json('Results', {
+          "meta"    : aggrCtrl.getMetaData(docs),
           "Results" : docs
       });
   });
@@ -65,29 +68,29 @@ var findCollectionZeroBikes = function (req, res, startingDate) {
 }
 
 /* GET Userlist page. */
-router.get('/yesterday', function(req, res) {
+router.get('/api/yesterday', function(req, res) {
     findCollection(req, res, new Date(new Date().setDate(new Date().getDate()-1)));
 });
 
-router.get('/yesterday/:kioskId', function(req, res) {
+router.get('/api/yesterday/:kioskId', function(req, res) {
   console.info(new Date(new Date().setDate(new Date().getDate()-1)));
   findCollectionWithId(req, res, new Date(new Date().setDate(new Date().getDate()-1)), parseInt(req.params.kioskId));
 });
 
 /* GET bike list for the past week page. */
-router.get('/lastWeek', function(req, res) {
+router.get('/api/lastWeek', function(req, res) {
   findCollection(req, res, new Date(new Date().setDate(new Date().getDate()-7)));
 });
 
-router.get('/lastWeek/:kioskId', function(req,res) {
+router.get('/api/lastWeek/:kioskId', function(req,res) {
   findCollectionWithId(req, res, new Date(new Date().setDate(new Date().getDate()-7)), parseInt(req.params.kioskId));
 });
 
-router.get('/lastWeekBikesNotAvailable/:kioskId', function(req,res) {
+router.get('/api/lastWeekBikesNotAvailable/:kioskId', function(req,res) {
   findCollectionZeroBikes(req, res, new Date(new Date().setDate(new Date().getDate()-7)), parseInt(req.params.kioskId));
 });
 
-router.get('/lastWeekBikesNotAvailable', function(req,res) {
+router.get('/api/lastWeekBikesNotAvailable', function(req,res) {
   findCollectionZeroBikes(req, res, new Date(new Date().setDate(new Date().getDate()-7)));
 });
 

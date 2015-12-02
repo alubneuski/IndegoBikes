@@ -1,6 +1,7 @@
 <div class="container" ng-controller="BikeUsageController" style="padding: 20px;">
+    <input ng-model="stationName" placeholder="Enter Station Name"></input>
     <ul class="list-group">
-        <li class="list-group-item" ng-repeat="item in dataSet">
+        <li class="list-group-item" ng-repeat="item in dataSet | filter:stationName">
             <a href="#/details/{{ item.properties.kioskId }}">{{ item.properties.name }}</a>
         </li>
     </ul>

@@ -6,13 +6,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var config = require('./config/config');
-
-// New Code
-var monk = require('monk');
-var db = monk(config.connection_string);
-
 var routes = require('./routes/routes');
+var monk = require('monk');
 
+//Get database
+var db = monk(config.connection_string);
 var app = express();
 
 // view engine setup
@@ -20,7 +18,7 @@ var app = express();
  app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/app/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
